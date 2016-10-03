@@ -134,17 +134,6 @@ export default React.createClass({
 		window.requestAnimationFrame( this.draw.bind(this, particles) );
 	},
 
-	/**
-	 * Calculates the dynamic particle x coordinate based on
-	 * the mouse cursor position.
-	 *
-	 * @param  {object} event - the event Object
-	 */
-	handleMouseMove (event) {
-		const { width = WIDTH } = this.props;
-
-		this.dynamicX = event.pageX / width;
-	},
 
 	componentDidMount () {
 		const {
@@ -173,7 +162,6 @@ export default React.createClass({
 				height={ height }
 				style={ styles }
 				ref={ canvas => this.ctx = canvas.getContext('2d') }
-				onMouseMove={ this.handleMouseMove }
 			>
 				<h3>
 					Oh no! You do not have support for the html5 canvas API!
