@@ -161,7 +161,7 @@ export default React.createClass({
 				width={ width }
 				height={ height }
 				style={ styles }
-				ref={ canvas => this.ctx = canvas.getContext('2d') }
+				ref={ (canvas) => { if(canvas) { this.ctx = canvas.getContext('2d') } } }
 			>
 				<h3>
 					Oh no! You do not have support for the html5 canvas API!
